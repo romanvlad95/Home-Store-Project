@@ -6,7 +6,11 @@
 {% endblock %}
 
 {% block content %}
-	<h1 class="mt-5 pt-5 default-font-color"><strong>{{ content }}</strong></h1>
+    <div class="mt-5 rounded bg-gradient">
+    	<h2 class="m-2 default-font-color"><strong>{{ content }}</strong></h2>
+        <p class="m-2 default-font-color">{{ text_on_page }}</p>
+    </div>
+
 {% endblock %}
 
 {% block footer %}

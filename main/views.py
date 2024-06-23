@@ -3,14 +3,16 @@ from django.shortcuts import render
 
 def index(request):
     context = {
-        'title': 'Home',
-        'content': 'Main page Home Store',
-        'list': ['first', 'second', 'third'],
-        'dict': {'first': 1, 'second': 2, 'third': 3},
-        'bool': True,
+        'title': 'Home Store - Main',
+        'content': 'Home Store',
     }
 
     return render(request, 'main/index.html', context)
 
 def about(request):
-    return HttpResponse("About page")
+    context = {
+        'title': 'Home Store - About us',
+        'content': 'About us',
+        'text_on_page': 'Quality is our primary goal'
+    }
+    return render(request, 'main/about.html', context)
