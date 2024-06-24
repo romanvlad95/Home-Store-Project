@@ -60,7 +60,8 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item  text-white" href="users/profile.html">Profile</a></li>
                                 <li><a class="dropdown-item  text-white" href="carts/cart.html">Cart</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">Admin page</a></li>
+
+                                <li><a class="dropdown-item  text-white" href="{% url 'admin:index' %}">Admin page</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -89,13 +90,10 @@
                             height="16">
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        <li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">All</a></li>
-                        <li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">Kitchen</a></li>
-                        <li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">Bedroom</a></li>
-                        <li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">Hall</a></li>
-                        <li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">Office</a></li>
-                        <li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">Furniture</a></li>
-                        <li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">Decorations</a></li>
+
+                        {% for category in categories %}
+                        	<li><a class="dropdown-item text-white" href="{%url 'catalogue:index' %}">{{ category.name }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <!-- Значок корзины, вызывает модальное окно -->
