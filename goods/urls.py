@@ -22,5 +22,6 @@ app_name = 'goods'
 
 urlpatterns = [
     path('<slug:category_slug>/', views.catalogue, name='index'),
+    path('<slug:category_slug>/<int:page>/', views.catalogue, name='index'),
     path('product/<slug:product_slug>/', views.product, name='product'),
 ]
