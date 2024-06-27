@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'deps/css/bootstrap/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'deps/css/my_css.css' %}">
-    <!-- Стиль footer-a для главной страницы -->
+    <!-- Main footer style -->
     {% block css %}
 
     {% endblock css %}
@@ -70,9 +70,9 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
+                    <form class="d-flex" role="search" action="{% url 'catalogue:search' %}" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success text-white" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -80,9 +80,9 @@
     </header>
     <section>
         <div class="container">
-            <!-- Каталог и корзина с фиксированным расположением на странице -->
+            <!-- Catalogue and cart -->
             <div class="row mt-1 position-fixed z-3">
-                <!-- Каталог -->
+                <!-- Catalogue -->
                 <div class="dropdown mb-2">
                     <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -97,7 +97,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <!-- Значок корзины, вызывает модальное окно -->
+                <!-- Cart icon calls modal window -->
                 <div>
                     <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
                         aria-expanded="false">
