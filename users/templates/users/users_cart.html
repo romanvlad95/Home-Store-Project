@@ -15,8 +15,10 @@
                         <!-- Cart map-->
                         {% include 'carts/includes/included_cart.html' %}
                     </div>
+                    {% if carts %}
                     <a class="btn btn-dark" href="../orders/create_order.html">
                         Оформить заказ
+                    {% endif %}
                     </a>
                 </div>
             </div>

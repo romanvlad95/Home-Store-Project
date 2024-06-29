@@ -92,8 +92,10 @@
                         <div class="container" id="cart-items-container">
                             {% include 'carts/includes/included_cart.html' %}
                         </div>
-                        <a class="btn btn-dark" href="../orders/create_order.html">
-                            Checkout
+                        {% if carts %}
+                            <a class="btn btn-dark" href="../orders/create_order.html">
+                            Оформить заказ
+                        {% endif %}
                         </a>
                     </div>
                 </div>
