@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">
 {% endblock %}
 
+{% block modal_cart %}
+{% include 'includes/cart_button.html' %}
+{% endblock %}
+
+
 {% block content %}
     <div class="mt-5 rounded bg-gradient">
     	<h2 class="m-2 default-font-color"><strong>{{ content }}</strong></h2>
