@@ -13,6 +13,8 @@ def index(request):
     return render(request, 'main/index.html', context)
 
 
+
+
 def about(request):
     context = {
         'title': 'Home Store - About us',
