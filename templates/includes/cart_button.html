@@ -11,7 +11,7 @@
         <span id="goods-in-cart-count">{{ carts.total_quantity }}</span>
     </button>
 </div>
-<!-- Разметка модального окна корзины -->
+<!-- Cart modal window map -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -27,11 +27,6 @@
                     {% include 'carts/includes/included_cart.html' %}
                     <!-- Cart mapping ends -->
                 </div>
-                {% if carts %}
-                    <a class="btn btn-dark" href="{% url 'orders:create_order' %}">
-                    Buy
-                {% endif %}
-                </a>
             </div>
         </div>
     </div>
