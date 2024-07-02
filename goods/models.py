@@ -10,6 +10,7 @@ class Categories(models.Model):
         db_table = 'category'
         verbose_name = 'category'
         verbose_name_plural = 'categories'
+        ordering = ('id',)
 
     def __str__(self):
         return self.name
@@ -39,7 +40,6 @@ class Products(models.Model):
 
     def display_id(self):
         return f'{self.id:05}'
-
 
 
     def sell_price(self):

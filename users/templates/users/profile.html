@@ -109,8 +109,7 @@
                                                     type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapse{{ order.id }}" aria-expanded="false"
                                                     aria-controls="collapse{{ order.id }}">
-                                                Order № {{ order.id }} - {{ order.created_timestamp }} | Status: <strong
-                                                    class="mx-2">Requires delivery: {% if not order.requires_delivery %}No{% else %}Yes{% endif %}</strong>
+                                                Order № {{ order.id }} - {{ order.created_timestamp }} | Status: <strong class="mx-2">{{order.status}}</strong>
                                             </button>
                                         </h2>
                                         <div id="collapse{{ order.id }}"

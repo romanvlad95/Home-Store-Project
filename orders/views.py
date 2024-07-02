@@ -8,6 +8,7 @@ from carts.models import Cart
 from orders.forms import CreateOrderForm
 from orders.models import Order, OrderItem
 
+
 @login_required
 def create_order(request):
     if request.method == 'POST':
@@ -52,7 +53,7 @@ def create_order(request):
                         return redirect('user:profile')
             except ValidationError as e:
                 messages.success(request, str(e))
-                return redirect('cart:order')
+                return redirect('orders:create_order')
     else:
         initial = {
             'first_name': request.user.first_name,
