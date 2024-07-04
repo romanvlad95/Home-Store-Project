@@ -1,11 +1,13 @@
 from django.urls import path
 
-from carts import views
+from users import views
 
-app_name = 'carts'
+app_name = 'users'
 
 urlpatterns = [
-    path('cart_add/', views.cart_add, name='cart_add'),
-    path('cart_change/', views.cart_change, name='cart_change'),
-    path('cart_remove/', views.cart_remove, name='cart_remove'),
+    path('login/', views.UserLoginView.as_view(), name='login'),
+    path('registration/', views.UserRegistrationView.as_view(), name='registration'),
+    path('profile/', views.UserProfileView.as_view(), name='profile'),
+    path('users-cart/', views.UserCartView.as_view(), name='users_cart'),
+    path('logout/', views.logout, name='logout'),
 ]
