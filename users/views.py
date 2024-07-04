@@ -31,11 +31,11 @@ class UserLoginView(LoginView):
         if user:
             auth.login(self.request, user)
             if session_key:
-                # delete old authorized user carts
+
                 forgot_carts = Cart.objects.filter(user=user)
                 if forgot_carts.exists():
                     forgot_carts.delete()
-                # add new authorized user carts from anonimous session
+
                 Cart.objects.filter(session_key=session_key).update(user=user)
 
                 messages.success(self.request, f"{user.username}, You are now logged in.")
