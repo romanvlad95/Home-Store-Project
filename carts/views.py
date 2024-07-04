@@ -63,13 +63,13 @@ def cart_change(request):
 
     referer = request.META.get('HTTP_REFERER')
     if reverse('orders:create_order') in referer:
-        context["orders"] = True
+        context["order"] = True
 
     cart_items_html = render_to_string(
         "carts/includes/included_cart.html", context, request=request)
 
     response_data = {
-        "message": "Количество изменено",
+        "message": "The quantity has been changed",
         "cart_items_html": cart_items_html,
         "quantity": updated_quantity,
     }
@@ -90,7 +90,7 @@ def cart_remove(request):
     # if referer page is create_order add key orders: True to context
     referer = request.META.get('HTTP_REFERER')
     if reverse('orders:create_order') in referer:
-        context["orders"] = True
+        context["order"] = True
 
     cart_items_html = render_to_string(
         "carts/includes/included_cart.html", context, request=request)
